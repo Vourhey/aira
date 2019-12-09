@@ -31,21 +31,21 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="/assets/images/favicon.png">
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.5.1">
     
     
       
-        <title>Robonomics</title>
+        <title>Basic Usage - Robonomics</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.1b62728e.css">
       
       
     
     
-      <script src="/assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
     
     
       
@@ -54,7 +54,7 @@
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
-    <link rel="stylesheet" href="/assets/fonts/material-icons.css">
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
     
     
     
@@ -75,12 +75,16 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
+      <a href="#basic-usage" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="/." title="Robonomics" class="md-header-nav__button md-logo">
+        <a href=".." title="Robonomics" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -97,7 +101,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                
+                Basic Usage
               
             </span>
           
@@ -150,7 +154,7 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="/." title="Robonomics" class="md-nav__button md-logo">
+    <a href=".." title="Robonomics" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
@@ -166,7 +170,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/." title="Getting Started" class="md-nav__link">
+    <a href=".." title="Getting Started" class="md-nav__link">
       Getting Started
     </a>
   </li>
@@ -176,11 +180,20 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="/basic_usage/" title="Basic Usage" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="Basic Usage" class="md-nav__link md-nav__link--active">
       Basic Usage
     </a>
+    
   </li>
 
     
@@ -190,7 +203,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/connecting_via_ssh/" title="Connecting via SSH" class="md-nav__link">
+    <a href="../connecting_via_ssh/" title="Connecting via SSH" class="md-nav__link">
       Connecting via SSH
     </a>
   </li>
@@ -202,7 +215,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/faq/" title="FAQ" class="md-nav__link">
+    <a href="../faq/" title="FAQ" class="md-nav__link">
       FAQ
     </a>
   </li>
@@ -214,7 +227,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/contributing/" title="Contributing" class="md-nav__link">
+    <a href="../contributing/" title="Contributing" class="md-nav__link">
       Contributing
     </a>
   </li>
@@ -245,7 +258,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/robonomics-js/beginning/" title="Introduction" class="md-nav__link">
+    <a href="../robonomics-js/beginning/" title="Introduction" class="md-nav__link">
       Introduction
     </a>
   </li>
@@ -263,12 +276,94 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
-  <h1>404 - Not found</h1>
-
+                
+                
+                <h1 id="basic-usage">Basic Usage</h1>
+<p>To get familiar with AIRA, let's see what is under the hood.</p>
+<p>Once you launch the client several ros nodes will already be on the run. Here's a list of robonomics communication stack nodes::</p>
+<pre><code>$ rosnode list
+/eth/erc20_token
+/eth/eth_node
+/graph/aira_graph
+/liability/executor
+/liability/infochan/eth/signer
+/liability/infochan/ipfs_channel
+/liability/persistence
+/liability/listener
+/rosout
+</code></pre>
+<ul>
+<li><code>/eth/erc20_token</code>, <code>/eth/eth_node</code> - proved services for Ethereum blockchain and ERC20 tokens</li>
+<li><code>/graph/aira_graph</code> - service node for exploring other AIRA instances</li>
+<li><code>/liability/executor</code> - gets rosbag file from IPFS and plays it</li>
+<li><code>/liability/infochan/ipfs_channel</code> - is responsible for offer, demand and result messages. It catches messages from the channel and sends signed messages back</li>
+<li><code>/liability/infochan/eth/signer</code> - offers services for signing offer, demand and result messages</li>
+<li><code>/liability/listener</code> - watches for a new liability contracts. When the event is received the node calls executor node</li>
+<li><code>/liability/persistence</code> - helps to store incoming liabilities and restart them after shutdown</li>
+</ul>
+<p>And here's a list of robonomics stack topics.</p>
+<p>.. code-block:: bash</p>
+<pre><code>$ rostopic list
+/eth/event/approval
+/eth/event/transfer
+/graph/greetings
+/liability/complete
+/liability/finalized
+/liability/incoming
+/liability/infochan/eth/sending/demand
+/liability/infochan/eth/sending/offer
+/liability/infochan/eth/sending/result
+/liability/infochan/eth/signing/demand
+/liability/infochan/eth/signing/offer
+/liability/infochan/eth/signing/result
+/liability/infochan/incoming/demand
+/liability/infochan/incoming/offer
+/liability/infochan/incoming/result
+/liability/persistence/add
+/liability/persistence/del
+/liability/persistence/update_timestamp
+/liability/ready
+/liability/result
+/rosout
+/rosout_agg
+</code></pre>
+<p>The most important topics for us are:</p>
+<ul>
+<li><code>/liability/incoming</code> - when a new liability is created, this topic publishes Ethereum address of the contract</li>
+<li><code>/liability/result</code> - this topic is for publishing results. But don't publish a result directly to this topic! Use a service instead</li>
+<li><code>/liability/infochan/incoming/*</code> - a CPS gets information about offer, demand or result from corresponding topics</li>
+<li><code>/liability/infochan/eth/signing/*</code> - a CPS sends offer, demand or result messages to corresponding topics</li>
+</ul>
+<p>For the details check out the <code>API page &lt;api/robonomics_liability.html&gt;</code>_.</p>
+<p>Let's start with greetings - say hello to AIRA!</p>
+<p>You should just launch a pre-installed package <code>hello_aira</code>::</p>
+<pre><code>$ rosrun hello_aira hello_aira
+</code></pre>
+<p>We've launched our agent. It will wait for a demand message. Now it's time to send the message. Go to <code>dapp &lt;https://airalab.github.io/robonomics_tutorials/&gt;</code>_ and press Order.
+Now go back to the console and see the result!</p>
+                
+                  
+                
+              
               
                 
 
@@ -281,6 +376,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href=".." title="Getting Started" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Getting Started
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../connecting_via_ssh/" title="Connecting via SSH" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Connecting via SSH
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -299,9 +429,9 @@
       
     </div>
     
-      <script src="/assets/javascripts/application.8e03edeb.js"></script>
+      <script src="../assets/javascripts/application.8e03edeb.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:"/"}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
     
   </body>
