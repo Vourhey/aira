@@ -61,7 +61,7 @@ The most important topics for us are:
 * `/liability/infochan/incoming/*` - a CPS gets information about offer, demand or result from corresponding topics
 * `/liability/infochan/eth/signing/*` - a CPS sends offer, demand or result messages to corresponding topics
 
-For the details check out the [API page](api/robonomics_liability.md).
+For the details check out the [API page](../agent_development/api/robonomics_liability.md).
 
 Let's start with greetings - say hello to AIRA!
 

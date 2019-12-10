@@ -2,26 +2,29 @@ site_name: Robonomics
 nav:
   - "Getting Started": index.md
   - "AIRA":
-    - "Basic Usage": basic_usage.md
-    - "Connecting via SSH": connecting_via_ssh.md
-    - FAQ: faq.md
-    - Contributing: contributing.md
+    - Overview: aira/overview.md
+    - Installation: aira/installation.md
+    - "Basic Usage": aira/basic_usage.md
+    - "Connecting via SSH": aira/connecting_via_ssh.md
+    - FAQ: aira/faq.md
+    - Contributing: aira/contributing.md
+  - "Agent Development":
     - "Robonomics Network":
-      - "How It Works": robonomics_network/how_it_works.md
-      - "Contracts Deployment": robonomics_network/contracts_deployment.md
-      - "Become a Provider": robonomics_network/become_a_provider.md
-    - "Market Messages": specs/market_messages.md
+      - "How It Works": agent_development/robonomics_network/how_it_works.md
+      - "Contracts Deployment": agent_development/robonomics_network/contracts_deployment.md
+      - "Become a Provider": agent_development/robonomics_network/become_a_provider.md
+    - "Market Messages": agent_development/market_messages.md
     - "ROS API Reference":
-      - "Robonomics Liability": api/robonomics_liability.md
-      - "Robonomics Liability Messages": api/robonomics_liability_msgs.md
-      - "Ethereum Common": api/ethereum_common.md
-      - "Ethereum Common Messages": api/ethereum_common_msgs.md
-      - "IPFS Common": api/ipfs_common.md
-      - "IPFS Common Messages": api/ipfs_common_msgs.md
+      - "Robonomics Liability": agent_development/api/robonomics_liability.md
+      - "Robonomics Liability Messages": agent_development/api/robonomics_liability_msgs.md
+      - "Ethereum Common": agent_development/api/ethereum_common.md
+      - "Ethereum Common Messages": agent_development/api/ethereum_common_msgs.md
+      - "IPFS Common": agent_development/api/ipfs_common.md
+      - "IPFS Common Messages": agent_development/api/ipfs_common_msgs.md
     - Examples:
-      - "Connect the Simplest CPS": examples/connect_simple_cps.md
-      - "Passing Dynamic Parameters": examples/passing_dynamic_parameters.md
-      - "Connect an Air Pollution Sensor": examples/connect_sensor.md
+      - "Connect the Simplest CPS": agent_development/examples/connect_simple_cps.md
+      - "Passing Dynamic Parameters": agent_development/examples/passing_dynamic_parameters.md
+      - "Connect an Air Pollution Sensor": agent_development/examples/connect_sensor.md
   - "Robonomics-js":
     - Introduction: robonomics-js/beginning.md
     - "How to": robonomics-js/howto.md

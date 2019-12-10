@@ -1,101 +1,64 @@
 Ethereum Common Messages
 ========================
 
-.. _Ethereum-common-Address.msg:
+## ethereum_common/Address.msg
 
-ethereum_common/Address.msg
----------------------------
+| Field   	| Type            	| Description                    	|
+|---------	|-----------------	|--------------------------------	|
+| address 	| std_msgs/String 	| Address in Ethereum blockchain 	|
 
-=========== ============================================================ ===============================================
-Field           Type                                                        Description
-=========== ============================================================ ===============================================
-address         std_msgs/String                                             Address in Ethereum blockchain
-=========== ============================================================ ===============================================
+## ethereum_common/UInt256.msg
 
-.. _Ethereum-common-UInt256.msg:
+| Field   	| Type            	| Description                	|
+|---------	|-----------------	|----------------------------	|
+| uint256 	| std_msgs/String 	| A wrapper for big integers 	|
 
-ethereum_common/UInt256.msg
----------------------------
+## ethereum_common/TransferEvent.msg
 
-=========== ============================================================ ===============================================
-Field           Type                                                        Description
-=========== ============================================================ ===============================================
-uint256         std_msgs/String                                             A wrapper for big integers
-=========== ============================================================ ===============================================
+| Field      	| Type                                                  	| Description      	|
+|------------	|-------------------------------------------------------	|------------------	|
+| args_from  	| [ethereum_common/Address](#ethereum_commonaddressmsg) 	| Sender address   	|
+| args_to    	| [ethereum_common/Address](#ethereum_commonaddressmsg) 	| Receiver address 	|
+| args_value 	| [ethereum_common/UInt256](#ethereum_commonuint256msg) 	| Amount of tokens 	|
 
-.. _Ethereum-common-TransferEvent.msg:
+## ethereum_common/ApprovalEvent.msg
 
-ethereum_common/TransferEvent.msg
----------------------------------
+| Field        	| Type                                                  	| Description      	|
+|--------------	|-------------------------------------------------------	|------------------	|
+| args_owner   	| [ethereum_common/Address](#ethereum_commonaddressmsg) 	| Owner address    	|
+| args_spender 	| [ethereum_common/Address](#ethereum_commonaddressmsg) 	| Spender address  	|
+| args_value   	| [ethereum_common/UInt256](#ethereum_commonuint256msg) 	| Amount of tokens 	|
 
-=========== ============================================================ ===============================================
-Field       Type                                                         Description
-=========== ============================================================ ===============================================
-args_from   :ref:`ethereum_common/Address <Ethereum-common-Address.msg>` Sender address
-args_to     :ref:`ethereum_common/Address <Ethereum-common-Address.msg>` Receiver address
-args_value  :ref:`ethereum_common/UInt256 <Ethereum-common-UInt256.msg>` Amount of tokens
-=========== ============================================================ ===============================================
-
-.. _Ethereum-common-ApprovalEvent.msg:
-
-ethereum_common/ApprovalEvent.msg
----------------------------------
-
-============ ============================================================ ==============================================
-Field        Type                                                         Description
-============ ============================================================ ==============================================
-args_owner   :ref:`ethereum_common/Address <Ethereum-common-Address.msg>` Owner address
-args_spender :ref:`ethereum_common/Address <Ethereum-common-Address.msg>` Spender address
-args_value   :ref:`ethereum_common/UInt256 <Ethereum-common-UInt256.msg>` Amount of tokens
-============ ============================================================ ==============================================
-
-.. _Ethereum-common-AccountBalance.srv:
-
-ethereum_common/AccountBalance.srv
-----------------------------------
+## ethereum_common/AccountBalance.srv
 
 **Request**
 
-=========== ============================================================ ===============================================
-Field       Type                                                          Description
-=========== ============================================================ ===============================================
-account     :ref:`ethereum_common/Address <Ethereum-common-Address.msg>`  Ethereum address
-=========== ============================================================ ===============================================
+| Field   	| Type                                                  	| Description      	|
+|---------	|-------------------------------------------------------	|------------------	|
+| account 	| [ethereum_common/Address](#ethereum_commonaddressmsg) 	| Ethereum address 	|
 
 **Response**
 
-=========== ============================================================ ===============================================
-Field       Type                                                          Description
-=========== ============================================================ ===============================================
-balance     :ref:`ethereum_common/UInt256 <Ethereum-common-UInt256.msg>`  Balance in Wei
-=========== ============================================================ ===============================================
+| Field   	| Type                                                  	| Description    	|
+|---------	|-------------------------------------------------------	|----------------	|
+| balance 	| [ethereum_common/UInt256](#ethereum_commonuint256msg) 	| Balance in Wei 	|
 
-.. _Ethereum-common-AccountToAddressAllowance.srv:
-
-ethereum_common/AccountToAddressAllowance.srv
----------------------------------------------
+## ethereum_common/AccountToAddressAllowance.srv
 
 **Request**
 
-=========== ============================================================ ===============================================
-Field       Type                                                          Description
-=========== ============================================================ ===============================================
-account     :ref:`ethereum_common/Address <Ethereum-common-Address.msg>`  Ethereum address
-to          :ref:`ethereum_common/Address <Ethereum-common-Address.msg>`  Ethereum address
-=========== ============================================================ ===============================================
+| Field   	| Type                                                  	| Description      	|
+|---------	|-------------------------------------------------------	|------------------	|
+| account 	| [ethereum_common/Address](#ethereum_commonaddressmsg) 	| Ethereum address 	|
+| to      	| [ethereum_common/Address](#ethereum_commonaddressmsg) 	| Ethereum address 	|
 
 **Response**
 
-=========== ============================================================ ===============================================
-Field       Type                                                          Description
-=========== ============================================================ ===============================================
-amount      :ref:`ethereum_common/UInt256 <Ethereum-common-UInt256.msg>`  Balance in Wn
-=========== ============================================================ ===============================================
+| Field  	| Type                                                  	| Description   	|
+|--------	|-------------------------------------------------------	|---------------	|
+| amount 	| [ethereum_common/UInt256](#ethereum_commonuint256msg) 	| Balance in Wn 	|
 
-.. _Ethereum-common-Accounts.srv:
-
-ethereum_common/Accounts.srv
-----------------------------
+## ethereum_common/Accounts.srv
 
 **Request**
 
@@ -109,10 +72,7 @@ Field       Type                                                            Desc
 accounts    :ref:`ethereum_common/Address[] <Ethereum-common-Address.msg>`  List of available accounts
 =========== ============================================================== =============================================
 
-.. _Ethereum-common-Allowance.srv:
-
-ethereum_common/Allowance.srv
------------------------------
+## ethereum_common/Allowance.srv
 
 **Request**
 
@@ -126,10 +86,7 @@ Field       Type                                                          Descri
 amount      :ref:`ethereum_common/UInt256 <Ethereum-common-UInt256.msg>`  Amount of XRT the Factory is allowed to spend
 =========== ============================================================ ===============================================
 
-.. _Ethereum-common-Approve.srv:
-
-ethereum_common/Approve.srv
----------------------------
+## ethereum_common/Approve.srv
 
 **Request**
 
@@ -148,10 +105,7 @@ Field       Type                                                            Desc
 txhash      std_msgs/Uint8[32]                                              Transaction hash
 =========== ============================================================ ===============================================
 
-.. _Ethereum-common-Balance.srv:
-
-ethereum_common/Balance.srv
----------------------------
+## ethereum_common/Balance.srv
 
 **Request**
 
@@ -165,10 +119,7 @@ Field       Type                                                          Descri
 balance     :ref:`ethereum_common/UInt256 <Ethereum-common-UInt256.msg>`  The balance of default account
 =========== ============================================================ ===============================================
 
-.. _Ethereum-common-BlockNumber.srv:
-
-ethereum_common/BlockNumber.srv
--------------------------------
+## ethereum_common/BlockNumber.srv
 
 **Request**
 
@@ -182,10 +133,7 @@ Field       Type                                                            Desc
 number      std_msgs/Uint64                                                 Current block number
 =========== ============================================================ ===============================================
 
-.. _Ethereum-common-Transfer.srv:
-
-ethereum_common/Transfer.srv
-----------------------------
+## ethereum_common/Transfer.srv
 
 **Request**
 
@@ -204,10 +152,7 @@ Field       Type                                                            Desc
 txhash      std_msgs/Uint8[32]                                              Transaction hash
 =========== ============================================================ ===============================================
 
-.. _Ethereum-common-TransferFrom.srv:
-
-ethereum_common/TransferFrom.srv
---------------------------------
+## ethereum_common/TransferFrom.srv
 
 **Request**
 

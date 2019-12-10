@@ -61,30 +61,30 @@ Path to a file with password for the keyfile. The type is `string`, defaults to 
 
 ### /liability/infochan/eth/signing/demand (robonomics_msgs/Demand)
 
-[robonomics_msgs/Demand](../specs/market_messages.md#demand) message to sign and send further to IPFS channel
+[robonomics_msgs/Demand](../market_messages.md#demand) message to sign and send further to IPFS channel
 
 ### /liability/infochan/eth/signing/offer (robonomics_msgs/Offer)
 
-[robonomics_msgs/Offer](../specs/market_messages.md#offer) message to sign and send further to IPFS channel
+[robonomics_msgs/Offer](../market_messages.md#offer) message to sign and send further to IPFS channel
 
 ### /liability/infochan/eth/signing/result (robonomics_msgs/Result)
 
-[robonomics_msgs/Result](../specs/market_messages.md#result) message to sign and send further to IPFS channel
+[robonomics_msgs/Result](../market_messages.md#result) message to sign and send further to IPFS channel
 
 
 ## Published topics
 
 ### /liability/infochan/incoming/demand (robonomics_msgs/Demand)
 
-Contains a [robonomics_msgs/Demand](../specs/market_messages.md#demand) message which was read from IPFS channel
+Contains a [robonomics_msgs/Demand](../market_messages.md#demand) message which was read from IPFS channel
 
 ### /liability/infochan/incoming/offer (robonomics_msgs/Offer)
 
-Contains a [robonomics_msgs/Offer](../specs/market_messages.md#offer) message which was read from IPFS channel
+Contains a [robonomics_msgs/Offer](../market_messages.md#offer) message which was read from IPFS channel
 
 ### /liability/infochan/incoming/result (robonomics_msgs/Result)
 
-Contains a [robonomics_msgs/Result](../specs/market_messages.md#result) message which was read from IPFS channel
+Contains a [robonomics_msgs/Result](../market_messages.md#result) message which was read from IPFS channel
 
 ### /liability/incoming (robonomics_liability/Liability)
 
@@ -106,19 +106,17 @@ Signals when a liability has been finalized
 
 ### /liability/start (robonomics_liability/StartLiability)
 
-The service tells executor to play topics from the objective. It's required to pass a liability address (`robonomics_liability/StartLiability`_), which you can get from `/liability/ready` topic
+The service tells executor to play topics from the objective. It's required to pass a liability address ([robonomics_liability/StartLiability](robonomics_liability_msgs.md#robonomics_liabilitystartliabilitysrv)), which you can get from `/liability/ready` topic
 
 ### /liability/finish (robonomics_liability/FinishLiability)
 
-a CPS should call the service after performing the task. The input is `robonomics_liability/FinishLiability`_
+CPS should call the service after performing the task. The input is [robonomics_liability/FinishLiability](robonomics_liability_msgs.md#robonomics_liabilityfinishiabilitysrv)
 
 ### /liability/restart (robonomics_liability/StartLiability)
 
-The service allows to restart a liability after the system shutdown. The input is `robonomics_liability/StartLiability`_
+The service allows to restart a liability after the system shutdown. The input is [robonomics_liability/StartLiability](robonomics_liability_msgs.md#robonomics_liabilitystartliabilitysrv)
 
 ### /liability/resume (robonomics_liability/StartLiability)
 
-The service allows to resume a liability from the last timestamp available in the persistence store. The input is `robonomics_liability/StartLiability`_
+The service allows to resume a liability from the last timestamp available in the persistence store. The input is [robonomics_liability/StartLiability](robonomics_liability_msgs.md#robonomics_liabilitystartliabilitysrv)
 
-.. _robonomics_liability/StartLiability: robonomics_liability_msgs.html
-.. _robonomics_liability/FinishLiability: robonomics_liability_msgs.html

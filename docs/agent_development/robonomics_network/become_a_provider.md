@@ -22,15 +22,15 @@ The next step is to deposit some ethers and XRT tokens to the address which is h
 
 Go to the lighthouse [dapp](https://robonomics.network/lighthouse/#/) and fill in a name in the right side:
 
-![The Right Side](../img/become_a_provider_1.png "The Right Side")
+![The Right Side](../../img/become_a_provider_1.png "The Right Side")
 
 Click on the `Create lighthouse and connect to the network` button and sign a transaction. After a while you should see:
 
-![Success of Creating a Lighthouse](../img/become_a_provider_2.png "Success of Creating a Lighthouse")
+![Success of Creating a Lighthouse](../../img/become_a_provider_2.png "Success of Creating a Lighthouse")
 
 Now it's time to put a stake. Select the new lighthouse and click `Connect to the network`:
 
-![Selecting the Lighthouse](../img/become_a_provider_3.png "Selecting the Lighthouse")
+![Selecting the Lighthouse](../../img/become_a_provider_3.png "Selecting the Lighthouse")
 
 On this page in the `Provider` section click the `Approve` button, sign a transaction. When it's mined click the `Refill` button and do the same.
 
@@ -70,11 +70,11 @@ At the bottom you should see the `TEST LIGHTHOUSE` section.
 
 Click on the `Demand` button and then on the `Offer` one. You should see something similar to:
 
-![Demand and Offer messages](../img/provider-mobilerobotics-demand-offer.png "Demand and Offer messages")
+![Demand and Offer messages](../../img/provider-mobilerobotics-demand-offer.png "Demand and Offer messages")
 
 Don't forget to sign every message with the MetaMask extension.
 
 Finally you should see a new liability contract created:
 
-![Liability is created](../img/provider-mobilerobotics-liability.png "Liability is created")
+![Liability is created](../../img/provider-mobilerobotics-liability.png "Liability is created")
 

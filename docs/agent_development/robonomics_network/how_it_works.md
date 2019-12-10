@@ -11,9 +11,9 @@ There are few main parts in the Robonomics network:
 
 Let's have a look at the following diagram that describes the scenario without any additional details:
 
-![The Main Scenario](../img/Robonomics_Scheme.png "The main scenario")
+![The Main Scenario](../../img/Robonomics_Scheme.png "The main scenario")
 
-There are three types of [messages](../specs/market_messages.md) in IPFS: Demand, Offer, Result.
+There are three types of [messages](../market_messages.md) in IPFS: Demand, Offer, Result.
 
 **Below there is the specification for a Demand message:**
 
@@ -51,14 +51,14 @@ An Offer message has the same fields but instead of `validatorFee` there is a `l
 
 Now let's have a look at the following diagram and walk step by step from the moment of publishing messages to a liability finalization.
 
-![Detailed scenario](../img/5.png "Detailed scenario")
+![Detailed scenario](../../img/5.png "Detailed scenario")
 
 A liability contract is created only if the following fields match: `model`, `objective`, `token`, `cost`. A provider of Robonomics Network watches every message and finds those ones that have a match.
 After the match is found the provider calls `createLiability(demand, offer)` method from the contract factory where `demand` and `offer` are serialized.
 
 Below is the package diagram for the Robonomics communication stack:
 
-![Scenario](../img/robonomics_comm_pkg.png "Scenario")
+![Scenario](../../img/robonomics_comm_pkg.png "Scenario")
 
 The factory deserializes arguments and recovers *promisee* and *promisor* addresses from signatures.
 

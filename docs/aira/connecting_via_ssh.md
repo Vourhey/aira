@@ -15,7 +15,7 @@ First, launch AIRA client and run a command replacing <username> with your own:
 
 Now go to machine settings, network, open Advanced and then Port Forwarding
 
-![Port forwarding](img/4.png "Port forwarding")
+![Port forwarding](../img/4.png "Port forwarding")
 
 Add a new rule:
 
