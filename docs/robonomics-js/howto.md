@@ -1,12 +1,8 @@
-How to
-======
+# How to
 
-How to create a demand?
------------------------
+## How to create a demand?
 
 Listen to a demand with a specific model: 
-
-.. code-block:: javascript
 
     const model = 'QmWXk8D1Fh5XFJvBodcWbwgyw9htjc6FJg8qi1YYEoPnrg'
     robonomics.getAsk(model, (msg) => {
@@ -21,22 +17,18 @@ Listen to a demand with a specific model:
 
 **Fields:**
 
-* ``objective`` - IPFS hash to a rosbag file with a task
-* ``token`` - token address
-* ``cost`` - cost
-* ``validator`` - validator address
-* ``validatorFee`` - validator fee 
-* ``deadline`` - block number 
+* `objective` - IPFS hash to a rosbag file with a task
+* `token` - token address
+* `cost` - cost
+* `validator` - validator address
+* `validatorFee` - validator fee 
+* `deadline` - block number 
 
 It's necessary to make an approve:
-
-.. code-block:: javascript
 
     robonomics.xrt.send('approve', [robonomics.factory.address, ask.cost], { from: robonomics.account }).then((tx) => console.log(tx))
 
 In case of other token:
-
-.. code-block:: javascript
 
     import { Token } from 'robonomics-js'
     const token = new Token(robonomics.web3, '0x1231321321321321321321321')
@@ -44,8 +36,6 @@ In case of other token:
       .then((tx) => console.log(tx))
 
 And send a demand message:
-
-.. code-block:: javascript
 
     robonomics.postAsk(market, ask)
         .then((liability) => {
@@ -59,12 +49,9 @@ And send a demand message:
             console.log('liability info', info)
         })
 
-How to get an offer?
------------------------
+## How to get an offer?
 
 Obtain all the messages by a given model:
-
-.. code-block:: javascript
 
     const model = 'QmWXk8D1Fh5XFJvBodcWbwgyw9htjc6FJg8qi1YYEoPnrg'
     robonomics.getBid(model, (msg) => {
@@ -73,77 +60,59 @@ Obtain all the messages by a given model:
 
 **Fields:**
 
-* ``objective`` - IPFS hash to a rosbag file with a task
-* ``token`` - token address
-* ``cost`` - cost
-* ``lighthouseFee`` - lighthouse fee 
-* ``deadline`` - block number 
+* `objective` - IPFS hash to a rosbag file with a task
+* `token` - token address
+* `cost` - cost
+* `lighthouseFee` - lighthouse fee 
+* `deadline` - block number 
 
-How to listen to a result?
--------------------------
+## How to listen to a result?
 
 Obtain all the messages by a given model:
-
-.. code-block:: javascript
 
     robonomics.getResult((msg) => {
         console.log(msg)
     })
 
-.. note::
-
+!!! note
     It's not a verified result. A verified result could be obtained from a liability contract.
 
-How to create a lighthouse?
-----------------------------
-
-.. code-block:: javascript
+## How to create a lighthouse?
 
     const minimalFreeze = 1000 // Wn
     const timeout = 25 // blocks
     const name = 'mylighthouse' // название маяка
     robonomics.factory.send('createLighthouse', [minimalFreeze, timeout, name], { from: robonomics.account })
         .then((tx) => console.log(tx))
-    ​
+
     robonomics.factory.watchLighthouse((lighthouse) => {
         console.log(lighthouse.name)
     })
 
-How to become a provider?
--------------------------
-
-.. code-block:: javascript
+## How to become a provider?
 
     const name = 'mylighthouse' // название маяка
     const stake = 1000 // Wn
-    ​
+    
     robonomics.setLighthouse(name)
-    ​
+    
     robonomics.xrt.send('approve', [robonomics.lighthouse.address, stake], { from: robonomics.account })
         .then((tx) => console.log(tx))
-    ​
+
     robonomics.lighthouse.send('refill', [stake], { from: robonomics.account })
       .then((tx) => console.log(tx))
 
-How to change a lighthouse?
----------------------------
-
-.. code-block:: javascript
+## How to change a lighthouse?
 
     robonomics.setLighthouse(name)
 
-How to check the balance?
---------------------------
-
-.. code-block:: javascript
+## How to check the balance?
 
     robonomics.xrt.call('balanceOf', [robonomics.account])
     .then((balance) => console.log('balance', balance))
 
-How to check the allowance?
-----------------------------
-
-.. code-block:: javascript
+## How to check the allowance?
 
     robonomics.xrt.call('allowance', [robonomics.account, robonomics.factory.address])
         .then((allowance) => console.log('allowance', allowance))
+

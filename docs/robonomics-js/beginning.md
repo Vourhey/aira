@@ -47,12 +47,12 @@ CDN
 
 ### Available arguments
 
-* ``web3`` - isn't necessary if `Metamask <http://metamask.io/>`_ is available
-* ``account`` - isn't necessary if `Metamask <http://metamask.io/>`_ is available
+* ``web3`` - isn't necessary if [Metamask](http://metamask.io/) is available
+* ``account`` - isn't necessary if [Metamask](http://metamask.io/) is available
 * ``privateKey`` - optional
 * ``provider`` - IPFS HTTP API 
 * ``version`` - the latest by default
-* ``ens`` - ENS address, `0x314159265dD8dbb310642f98f50C066173C1259b <https://etherscan.io/address/0x314159265dD8dbb310642f98f50C066173C1259b>`_ by default
-* ``lighthouse`` - a lighthouse name in ENS, airalab.lighthouse.1.robonomics.eth by default
+* ``ens`` - ENS address, [0x314159265dD8dbb310642f98f50C066173C1259b](https://etherscan.io/address/0x314159265dD8dbb310642f98f50C066173C1259b) by default
+* ``lighthouse`` - a lighthouse name in ENS, airalab.lighthouse.5.robonomics.eth by default
 
 

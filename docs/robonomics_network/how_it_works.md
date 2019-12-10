@@ -30,6 +30,7 @@ There are three types of [messages](../specs/market_messages.md) in IPFS: Demand
 | sender        | ethereum_common/Address   | Message sender address                            | 0x0000000000000000000000000000000000000000        |
 | signature     | std_msgs/UInt8[]          | Sender’s digital signature                        | 0x23bc…c617                                       |
 
+<!--
 =============== ============================================================== ================================================ ================================================
      Field                                   Type                                                Description                                        Example
 =============== ============================================================== ================================================ ================================================
@@ -44,23 +45,20 @@ There are three types of [messages](../specs/market_messages.md) in IPFS: Demand
   sender         :ref:`ethereum_common/Address <Ethereum-common-Address.msg>`   Message sender address                           0x0000000000000000000000000000000000000000
   signature      std_msgs/UInt8[]                                               Sender's digital signature                       0x23bc...c617
 =============== ============================================================== ================================================ ================================================
+-->
 
-An Offer message has the same fields but instead of ``validatorFee`` there is a ``lighthouseFee`` field. This field determines the amount of fee for a lighthouse.
+An Offer message has the same fields but instead of `validatorFee` there is a `lighthouseFee` field. This field determines the amount of fee for a lighthouse.
 
 Now let's have a look at the following diagram and walk step by step from the moment of publishing messages to a liability finalization.
 
-.. image:: ../img/5.png
-   :alt: Detailed scenario
-   :align: center
+![Detailed scenario](../img/5.png "Detailed scenario")
 
-A liability contract is created only if the following fields match: ``model``, ``objective``, ``token``, ``cost``. A provider of Robonomics Network watches every message and finds those ones that have a match.
-After the match is found the provider calls ``createLiability(demand, offer)`` method from the contract factory where ``demand`` and ``offer`` are serialized.
+A liability contract is created only if the following fields match: `model`, `objective`, `token`, `cost`. A provider of Robonomics Network watches every message and finds those ones that have a match.
+After the match is found the provider calls `createLiability(demand, offer)` method from the contract factory where `demand` and `offer` are serialized.
 
 Below is the package diagram for the Robonomics communication stack:
 
-.. image:: ../img/robonomics_comm_pkg.png
-   :alt: Scenario
-   :align: center
+![Scenario](../img/robonomics_comm_pkg.png "Scenario")
 
 The factory deserializes arguments and recovers *promisee* and *promisor* addresses from signatures.
 
