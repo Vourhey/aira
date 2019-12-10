@@ -1,12 +1,29 @@
 site_name: Robonomics
 nav:
   - "Getting Started": index.md
-  - "Basic Usage": basic_usage.md
-  - "Connecting via SSH": connecting_via_ssh.md
-  - FAQ: faq.md
-  - Contributing: contributing.md
+  - "AIRA":
+    - "Basic Usage": basic_usage.md
+    - "Connecting via SSH": connecting_via_ssh.md
+    - FAQ: faq.md
+    - Contributing: contributing.md
+    - "Robonomics Network":
+      - "How It Works": robonomics_network/how_it_works.md
+      - "Contracts Deployment": robonomics_network/contracts_deployment.md
+      - "Become a Provider": robonomics_network/become_a_provider.md
+    - "Market Messages": specs/market_messages.md
+    - "ROS API Reference":
+      - "Robonomics Liability": api/robonomics_liability.md
+      - "Robonomics Liability Messages": api/robonomics_liability_msgs.md
+      - "Ethereum Common": api/ethereum_common.md
+      - "Ethereum Common Messages": api/ethereum_common_msgs.md
+    - Examples:
+      - "Connect the Simplest CPS": examples/connect_simple_cps.md
+      - "Passing Dynamic Parameters": examples/passing_dynamic_parameters.md
+      - "Connect an Air Pollution Sensor": examples/connect_sensor.md
   - "Robonomics-js":
     - Introduction: robonomics-js/beginning.md
+    - "How to": robonomics-js/howto.md
+    - "Creating Dapp": robonomics-js/creating_dapp.md
 theme:
   name: 'material'
 markdown_extensions:

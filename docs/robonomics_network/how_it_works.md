@@ -1,5 +1,4 @@
-How It Works
-============
+# How It Works
 
 In this section we will discuss the Robonomics Network scenario.
 
@@ -12,13 +11,24 @@ There are few main parts in the Robonomics network:
 
 Let's have a look at the following diagram that describes the scenario without any additional details:
 
-.. image:: ../img/Robonomics_Scheme.png
-   :alt: The main scenario
-   :align: center
+![The Main Scenario](../img/Robonomics_Scheme.png "The main scenario")
 
-There are three types of `messages <../specs/market_messages.html>`_ in IPFS: Demand, Offer, Result.
+There are three types of [messages](../specs/market_messages.md) in IPFS: Demand, Offer, Result.
 
 **Below there is the specification for a Demand message:**
+
+| Field         | Type                      | Description                                       | Example                                           |
+|-------------- |-------------------------  |------------------------------------------------   |------------------------------------------------   |
+| model         | ipfs_common/Multihash     | CPS behavioral model Identifier                   | QmfXHZ2YkNC5vRjp1oAaRoDHD8H3zZznfhBPasTu348eWC    |
+| objective     | ipfs_common/Multihash     | CPS behavioral model parameters in rosbag file    | QmUo3vvSXZPQaQWjb3cH3qQo1hc8vAUqNnqbdVABbSLb6r    |
+| token         | ethereum_common/Address   | Operational token address                         | 0xbD949595eE52346c225a19724084cE517B2cB735        |
+| cost          | ethereum_common/UInt256   | CPS behavioral model implementation cost          | 1                                                 |
+| lighthouse    | ethereum_common/Address   | Lighthouse address                                | 0xa1b60ED40E5A68184b3ce4f7bEf31521A57eD2dB1       |
+| validator     | ethereum_common/Address   | Observing network address                         | 0x0000000000000000000000000000000000000000        |
+| validatorFee  | ethereum_common/UInt256   | Observing network commission                      | 0                                                 |
+| deadline      | ethereum_common/UInt256   | Deadline block number                             | 6393332                                           |
+| sender        | ethereum_common/Address   | Message sender address                            | 0x0000000000000000000000000000000000000000        |
+| signature     | std_msgs/UInt8[]          | Sender’s digital signature                        | 0x23bc…c617                                       |
 
 =============== ============================================================== ================================================ ================================================
      Field                                   Type                                                Description                                        Example
