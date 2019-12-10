@@ -1,0 +1,21 @@
+site_name: Robonomics
+nav:
+  - "Getting Started": index.md
+  - "Basic Usage": basic_usage.md
+  - "Connecting via SSH": connecting_via_ssh.md
+  - FAQ: faq.md
+  - Contributing: contributing.md
+  - "Robonomics-js":
+    - Introduction: robonomics-js/beginning.md
+theme:
+  name: 'material'
+markdown_extensions:
+  - codehilite
+  - admonition
+extra:
+  social:
+    - type: "github"
+      link: "https://github.com/airalab/"
+    - type: "twitter"
+      link: "https://twitter.com/AIRA_Robonomics"
+

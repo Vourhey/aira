@@ -1,55 +1,51 @@
-Introduction
-============
+# Introduction
 
-`Robonomics-js <https://github.com/airalab/robonomics-js>`_ is a simple Javascript library for working with Robonomics network
+[Robonomics-js](https://github.com/airalab/robonomics-js) is a simple Javascript library for working with Robonomics network
 
-Installation
-------------
+## Installation
 
-.. code-block:: bash
-
-    npm install robonomics-js --save
+```
+npm install robonomics-js --save
+```
 
 or
 
-.. code-block:: bash
-
-    yarn add robonomics-js
+```
+yarn add robonomics-js
+```
 
 CDN
 
-.. code-block:: html
+```
+<script src="https://cdn.jsdelivr.net/npm/robonomics-js/dist/robonomics.min.js"></script>
+```
 
-    <script src="https://cdn.jsdelivr.net/npm/robonomics-js/dist/robonomics.min.js"></script>
+### Dependencies 
 
-Dependencies 
-~~~~~~~~~~~~~
-
-* `Web3 <https://github.com/ethereum/web3.js/>`_
-* `Ipfs <https://github.com/ipfs/js-ipfs>`_
+* [Web3](https://github.com/ethereum/web3.js/)
+* [Ipfs](https://github.com/ipfs/js-ipfs)
 
 
-Initialization
---------------
+## Initialization
 
-.. code-block:: javascript
 
+```
     import Robonomics, { MessageProviderIpfsApi } from 'robonomics-js'
     import IPFS from 'ipfs-api'
-    ​
+
     const robonomics = new Robonomics({
         provider: new MessageProviderIpfsApi(new IPFS('http://localhost:5001'))
     })
-    ​
+
     robonomics.ready().then(() => {
         console.log('robonomics js ready')
         console.log('xrt', robonomics.xrt.address)
         console.log('factory', robonomics.factory.address)
         console.log('lighthouse default', robonomics.lighthouse.address)
     })
+```
 
-Available arguments
-~~~~~~~~~~~~~~~~~~~~
+### Available arguments
 
 * ``web3`` - isn't necessary if `Metamask <http://metamask.io/>`_ is available
 * ``account`` - isn't necessary if `Metamask <http://metamask.io/>`_ is available
