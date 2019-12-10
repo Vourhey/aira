@@ -120,3 +120,7 @@ The service allows to restart a liability after the system shutdown. The input i
 
 The service allows to resume a liability from the last timestamp available in the persistence store. The input is [robonomics_liability/StartLiability](robonomics_liability_msgs.md#robonomics_liabilitystartliabilitysrv)
 
+### /liability/read (robonomics_liability/ReadLiability)
+
+The service returns all the data about a liability by its address. The input is [robonomics_liability/ReadLiability](robonomics_liability_msgs.md#robonomics_liabilityreadliabilitysrv)
+

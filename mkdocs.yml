@@ -31,6 +31,7 @@ nav:
     - "Creating Dapp": robonomics-js/creating_dapp.md
 theme:
   name: 'material'
+  favicon: 'img/favicon.ico'
 markdown_extensions:
   - codehilite
   - admonition
