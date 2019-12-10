@@ -300,7 +300,7 @@
                 <h1 id="basic-usage">Basic Usage</h1>
 <p>To get familiar with AIRA, let's see what is under the hood.</p>
 <p>Once you launch the client several ros nodes will already be on the run. Here's a list of robonomics communication stack nodes::</p>
-<pre><code>$ rosnode list
+<div class="codehilite"><pre><span></span>$ rosnode list
 /eth/erc20_token
 /eth/eth_node
 /graph/aira_graph
@@ -310,7 +310,9 @@
 /liability/persistence
 /liability/listener
 /rosout
-</code></pre>
+</pre></div>
+
+
 <ul>
 <li><code>/eth/erc20_token</code>, <code>/eth/eth_node</code> - proved services for Ethereum blockchain and ERC20 tokens</li>
 <li><code>/graph/aira_graph</code> - service node for exploring other AIRA instances</li>
@@ -322,7 +324,7 @@
 </ul>
 <p>And here's a list of robonomics stack topics.</p>
 <p>.. code-block:: bash</p>
-<pre><code>$ rostopic list
+<div class="codehilite"><pre><span></span>$ rostopic list
 /eth/event/approval
 /eth/event/transfer
 /graph/greetings
@@ -345,7 +347,9 @@
 /liability/result
 /rosout
 /rosout_agg
-</code></pre>
+</pre></div>
+
+
 <p>The most important topics for us are:</p>
 <ul>
 <li><code>/liability/incoming</code> - when a new liability is created, this topic publishes Ethereum address of the contract</li>
@@ -356,8 +360,10 @@
 <p>For the details check out the <code>API page &lt;api/robonomics_liability.html&gt;</code>_.</p>
 <p>Let's start with greetings - say hello to AIRA!</p>
 <p>You should just launch a pre-installed package <code>hello_aira</code>::</p>
-<pre><code>$ rosrun hello_aira hello_aira
-</code></pre>
+<div class="codehilite"><pre><span></span>$ rosrun hello_aira hello_aira
+</pre></div>
+
+
 <p>We've launched our agent. It will wait for a demand message. Now it's time to send the message. Go to <code>dapp &lt;https://airalab.github.io/robonomics_tutorials/&gt;</code>_ and press Order.
 Now go back to the console and see the result!</p>
                 
@@ -423,6 +429,15 @@ Now go back to the console and see the result!</p>
           Material for MkDocs</a>
       </div>
       
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/airalab/" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/AIRA_Robonomics" class="md-footer-social__link fa fa-twitter"></a>
+    
+  </div>
+
     </div>
   </div>
 </footer>

@@ -413,16 +413,19 @@
                 <h1 id="introduction">Introduction</h1>
 <p><a href="https://github.com/airalab/robonomics-js">Robonomics-js</a> is a simple Javascript library for working with Robonomics network</p>
 <h2 id="installation">Installation</h2>
-<pre><code>npm install robonomics-js --save
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="err">npm install robonomics-js --save</span>
+</pre></div>
+
 
 <p>or</p>
-<pre><code>yarn add robonomics-js
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="err">yarn add robonomics-js</span>
+</pre></div>
+
 
 <p>CDN</p>
-<pre><code>&lt;script src=&quot;https://cdn.jsdelivr.net/npm/robonomics-js/dist/robonomics.min.js&quot;&gt;&lt;/script&gt;
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="nt">&lt;script</span> <span class="na">src=</span><span class="s">&quot;https://cdn.jsdelivr.net/npm/robonomics-js/dist/robonomics.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+
 
 <h3 id="dependencies">Dependencies</h3>
 <ul>
@@ -430,20 +433,21 @@
 <li><a href="https://github.com/ipfs/js-ipfs">Ipfs</a></li>
 </ul>
 <h2 id="initialization">Initialization</h2>
-<pre><code>    import Robonomics, { MessageProviderIpfsApi } from 'robonomics-js'
-    import IPFS from 'ipfs-api'
+<div class="codehilite"><pre><span></span>    <span class="kn">import</span> <span class="nn">Robonomics</span><span class="o">,</span> <span class="p">{</span> <span class="n">MessageProviderIpfsApi</span> <span class="p">}</span> <span class="kn">from</span> <span class="s1">&#39;robonomics-js&#39;</span>
+    <span class="kn">import</span> <span class="nn">IPFS</span> <span class="nn">from</span> <span class="s1">&#39;ipfs-api&#39;</span>
 
-    const robonomics = new Robonomics({
-        provider: new MessageProviderIpfsApi(new IPFS('http://localhost:5001'))
-    })
+    <span class="n">const</span> <span class="n">robonomics</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Robonomics</span><span class="p">({</span>
+        <span class="n">provider</span><span class="p">:</span> <span class="n">new</span> <span class="n">MessageProviderIpfsApi</span><span class="p">(</span><span class="n">new</span> <span class="n">IPFS</span><span class="p">(</span><span class="s1">&#39;http://localhost:5001&#39;</span><span class="p">))</span>
+    <span class="p">})</span>
 
-    robonomics.ready().then(() =&gt; {
-        console.log('robonomics js ready')
-        console.log('xrt', robonomics.xrt.address)
-        console.log('factory', robonomics.factory.address)
-        console.log('lighthouse default', robonomics.lighthouse.address)
-    })
-</code></pre>
+    <span class="n">robonomics</span><span class="o">.</span><span class="n">ready</span><span class="p">()</span><span class="o">.</span><span class="n">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;robonomics js ready&#39;</span><span class="p">)</span>
+        <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;xrt&#39;</span><span class="p">,</span> <span class="n">robonomics</span><span class="o">.</span><span class="n">xrt</span><span class="o">.</span><span class="n">address</span><span class="p">)</span>
+        <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;factory&#39;</span><span class="p">,</span> <span class="n">robonomics</span><span class="o">.</span><span class="n">factory</span><span class="o">.</span><span class="n">address</span><span class="p">)</span>
+        <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s1">&#39;lighthouse default&#39;</span><span class="p">,</span> <span class="n">robonomics</span><span class="o">.</span><span class="n">lighthouse</span><span class="o">.</span><span class="n">address</span><span class="p">)</span>
+    <span class="p">})</span>
+</pre></div>
+
 
 <h3 id="available-arguments">Available arguments</h3>
 <ul>
@@ -504,6 +508,15 @@
           Material for MkDocs</a>
       </div>
       
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/airalab/" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/AIRA_Robonomics" class="md-footer-social__link fa fa-twitter"></a>
+    
+  </div>
+
     </div>
   </div>
 </footer>

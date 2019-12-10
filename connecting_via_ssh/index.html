@@ -300,14 +300,18 @@
                 <h1 id="connecting-via-ssh">Connecting via SSH</h1>
 <p>It is more convenient to work with virtual machine via ssh connection. In this section we will configure VM.</p>
 <p>.. attention::</p>
-<pre><code>It's required to have your ssh public key on Github.com
-In case you don't have one, please follow the `link &lt;https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/&gt;`_
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="err">It&#39;s required to have your ssh public key on Github.com</span>
+<span class="err">In case you don&#39;t have one, please follow the `link &lt;https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/&gt;`_</span>
+</pre></div>
+
+
 <p>First, launch AIRA client and run a command replacing <username> with your own::</p>
-<pre><code>$ mkdir .ssh
-$ chmod 700 .ssh
+<div class="codehilite"><pre><span></span>$ mkdir .ssh
+$ chmod <span class="m">700</span> .ssh
 $ curl -sSL https://github.com/&lt;username&gt;.keys &gt;&gt; .ssh/authorized_keys
-</code></pre>
+</pre></div>
+
+
 <p>Now go to machine settings, network, open Advanced and then Port Forwarding</p>
 <p>.. image:: img/4.png
    :alt: Port forwarding
@@ -319,8 +323,8 @@ $ curl -sSL https://github.com/&lt;username&gt;.keys &gt;&gt; .ssh/authorized_ke
 | 127.0.1.1 | 2202      | 10.0.2.15 | 22         |
 +-----------+-----------+-----------+------------+</p>
 <p>Reboot the machine and you are able to connect to AIRA client via ssh::</p>
-<pre><code>$ ssh -p 2202 root@127.0.1.1
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="err">$</span> <span class="n">ssh</span> <span class="o">-</span><span class="n">p</span> <span class="mi">2202</span> <span class="n">root</span><span class="mf">@127.0.1.1</span>
+</pre></div>
                 
                   
                 
@@ -384,6 +388,15 @@ $ curl -sSL https://github.com/&lt;username&gt;.keys &gt;&gt; .ssh/authorized_ke
           Material for MkDocs</a>
       </div>
       
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/airalab/" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/AIRA_Robonomics" class="md-footer-social__link fa fa-twitter"></a>
+    
+  </div>
+
     </div>
   </div>
 </footer>
