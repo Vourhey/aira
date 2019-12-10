@@ -17,13 +17,21 @@ Web3 WebSocket provider address. The type is `string`, defaults to `ws://127.0.0
 
 IPFS HTTP provider address. The type is `string`, defaults to `http://127.0.0.1:5001`
 
+### ~ipfs_swarm_connect_addresses
+
+IPFS nodes to connect to. The type is `string`, defaults to `""`
+
+### ~ipfs_public_providers
+
+A public IPFS node to pin result files. The type is `string`, defaults to `""`
+
 ### ~factory_contract
 
-The name of the liability factory. The type is `string`, defaults to `factory.3.robonomics.eth`
+The name of the liability factory. The type is `string`, defaults to `factory.5.robonomics.eth`
 
 ### ~lighthouse_contract
 
-The name of a lighthouse you are working on. The type is `string`, defaults to `airalab.lighthouse.3.robonomics.eth`
+The name of a lighthouse you are working on. The type is `string`, defaults to `airalab.lighthouse.5.robonomics.eth`
 
 ### ~enable_executor
 
@@ -53,42 +61,42 @@ Path to a file with password for the keyfile. The type is `string`, defaults to 
 
 ### /liability/infochan/eth/signing/demand (robonomics_msgs/Demand)
 
-[robonomics_msgs/Demand](../specs/market_messages.md) message to sign and send further to IPFS channel
+[robonomics_msgs/Demand](../specs/market_messages.md#demand) message to sign and send further to IPFS channel
 
 ### /liability/infochan/eth/signing/offer (robonomics_msgs/Offer)
 
-[robonomics_msgs/Offer](../specs/market_messages.md) message to sign and send further to IPFS channel
+[robonomics_msgs/Offer](../specs/market_messages.md#offer) message to sign and send further to IPFS channel
 
 ### /liability/infochan/eth/signing/result (robonomics_msgs/Result)
 
-[robonomics_msgs/Result](../specs/market_messages.md) message to sign and send further to IPFS channel
+[robonomics_msgs/Result](../specs/market_messages.md#result) message to sign and send further to IPFS channel
 
 
 ## Published topics
 
 ### /liability/infochan/incoming/demand (robonomics_msgs/Demand)
 
-Contains a `robonomics_msgs/Demand`_ message which was read from IPFS channel
+Contains a [robonomics_msgs/Demand](../specs/market_messages.md#demand) message which was read from IPFS channel
 
 ### /liability/infochan/incoming/offer (robonomics_msgs/Offer)
 
-Contains a `robonomics_msgs/Offer`_ message which was read from IPFS channel
+Contains a [robonomics_msgs/Offer](../specs/market_messages.md#offer) message which was read from IPFS channel
 
 ### /liability/infochan/incoming/result (robonomics_msgs/Result)
 
-Contains a `robonomics_msgs/Result`_ message which was read from IPFS channel
+Contains a [robonomics_msgs/Result](../specs/market_messages.md#result) message which was read from IPFS channel
 
 ### /liability/incoming (robonomics_liability/Liability)
 
-Contains all the information about the last created [robonomics_liability/Liability](robonomics_liability_msgs.md)
+Contains all the information about the last created [robonomics_liability/Liability](robonomics_liability_msgs.md#robonomics_liabilityliabilitymsg)
 
 ### /liability/ready (robonomics_liability/Liability)
 
-Signals when a [robonomics_liability/Liability](robonomics_liability_msgs.md)is ready for execution
+Signals when a [robonomics_liability/Liability](robonomics_liability_msgs.md#robonomics_liabilityliabilitymsg)is ready for execution
 
 ### /liability/complete (robonomics_liability/Liability)
 
-Signals when a [robonomics_liability/Liability](robonomics_liability_msgs.md) has done its job
+Signals when a [robonomics_liability/Liability](robonomics_liability_msgs.md#robonomics_liabilityliabilitymsg) has done its job
 
 ### /liability/finalized (std_msgs/String)
 

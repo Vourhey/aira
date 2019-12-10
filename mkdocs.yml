@@ -16,6 +16,8 @@ nav:
       - "Robonomics Liability Messages": api/robonomics_liability_msgs.md
       - "Ethereum Common": api/ethereum_common.md
       - "Ethereum Common Messages": api/ethereum_common_msgs.md
+      - "IPFS Common": api/ipfs_common.md
+      - "IPFS Common Messages": api/ipfs_common_msgs.md
     - Examples:
       - "Connect the Simplest CPS": examples/connect_simple_cps.md
       - "Passing Dynamic Parameters": examples/passing_dynamic_parameters.md

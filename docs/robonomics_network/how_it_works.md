@@ -19,8 +19,8 @@ There are three types of [messages](../specs/market_messages.md) in IPFS: Demand
 
 | Field         | Type                      | Description                                       | Example                                           |
 |-------------- |-------------------------  |------------------------------------------------   |------------------------------------------------   |
-| model         | ipfs_common/Multihash     | CPS behavioral model Identifier                   | QmfXHZ2YkNC5vRjp1oAaRoDHD8H3zZznfhBPasTu348eWC    |
-| objective     | ipfs_common/Multihash     | CPS behavioral model parameters in rosbag file    | QmUo3vvSXZPQaQWjb3cH3qQo1hc8vAUqNnqbdVABbSLb6r    |
+| model         | [ipfs_common/Multihash](../api/robonomics_liability_msgs.md#ipfs_commonmultihashmsg)     | CPS behavioral model Identifier                   | QmfXHZ2YkNC5vRjp1oAaRoDHD8H3zZznfhBPasTu348eWC    |
+| objective     | [ipfs_common/Multihash](../api/robonomics_liability_msgs.md#ipfs_commonmultihashmsg)     | CPS behavioral model parameters in rosbag file    | QmUo3vvSXZPQaQWjb3cH3qQo1hc8vAUqNnqbdVABbSLb6r    |
 | token         | ethereum_common/Address   | Operational token address                         | 0xbD949595eE52346c225a19724084cE517B2cB735        |
 | cost          | ethereum_common/UInt256   | CPS behavioral model implementation cost          | 1                                                 |
 | lighthouse    | ethereum_common/Address   | Lighthouse address                                | 0xa1b60ED40E5A68184b3ce4f7bEf31521A57eD2dB1       |
@@ -66,12 +66,10 @@ The factory deserializes arguments and recovers *promisee* and *promisor* addres
 
 Next step is token transfer. The factory transfers **cost** tokens from the *promisee* address and **validatorFee** and **lighthouseFee** from the *promisor* address to the new liability address.
 
-.. note::
-
+!!! note
     You should approve sufficient amount of tokens for the factory.
 
-.. note::
-
+!!! note
     It's not required to approve tokens from the *promisor* address if fees are null.
 
 Now the factory emits a NewLiability event with the liability address. An agent gets the address, reads fields, perform a task and at the same time writes a log file in rosbag format.

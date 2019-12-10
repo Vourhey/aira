@@ -9,17 +9,16 @@ Market messages is used for exchange **Demand** and **Offer** information. It al
 * Currently for message delivery is used [IPFS PubSub](https://ipfs.io/blog/25-pubsub/) broadcaster.
 * IPFS PubSub **topic** is set according to *Lighthouse* [ENS](https://ens.domains/) name.
 
-Messages content
-----------------
+## Messages content
 
 Robonomics market message use [JSON](https://www.json.org/) data format.
 
-**Demand**
+### Demand
 
 | Field         | ROS Type                  | Description                                       |
 |-------------- |-------------------------  |------------------------------------------------   |
-| model         | ipfs_common/Multihash     | CPS behavioral model identifier                   |
-| objective     | ipfs_common/Multihash     | CPS behavioral model parameters in rosbag file    |
+| model         | [ipfs_common/Multihash](../api/robonomics_liability_msgs.md#ipfs_commonmultihashmsg)      | CPS behavioral model identifier                   |
+| objective     | [ipfs_common/Multihash](../api/robonomics_liability_msgs.md#ipfs_commonmultihashmsg)      | CPS behavioral model parameters in rosbag file    |
 | token         | ethereum_common/Address   | Operational token address                         |
 | cost          | ethereum_common/UInt256   | CPS behavioral model execution cost               |
 | lighthouse    | ethereum_common/Address   | Lighthouse contract address                       |
@@ -48,7 +47,7 @@ Robonomics market message use [JSON](https://www.json.org/) data format.
  ============== ============================================================== ================================================
 -->
 
-**Offer**
+### Offer
 
 | Field             | ROS Type                  | Description                                       |
 |---------------    |-------------------------  |------------------------------------------------   |
@@ -82,7 +81,7 @@ Robonomics market message use [JSON](https://www.json.org/) data format.
  =============== ============================================================== ================================================
 -->
 
-**Result**
+### Result
 
 | Field         | ROS Type                  | Description                       |
 |-----------    |-------------------------  |---------------------------------- |
@@ -102,8 +101,7 @@ Robonomics market message use [JSON](https://www.json.org/) data format.
  =========== ============================================================== ===========================================
 -->
 
-Messages signing
-----------------
+## Messages signing
 
 Before signing the messages is packed using [abi.encodePacked](https://solidity.readthedocs.io/en/latest/abi-spec.html#non-standard-packed-mode
 ) solidity finction and hashed by Keccak_256.
